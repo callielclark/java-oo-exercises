@@ -1,3 +1,4 @@
+
 public class Fraction 
 {
 	private int num;
