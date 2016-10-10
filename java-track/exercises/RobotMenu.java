@@ -65,7 +65,13 @@ public class RobotMenu
 			else if (orientation == "R") r1.turnRight();
 			System.out.println("robot's status after turning:\n" + r1);
 		}
-		else if (selection == 5) System.out.println("coming soon...");
+		else if (selection == 5) 
+		{
+			displayRobots();
+			Robot r1 = selectRobot();
+			Robot r2 = selectRobot();
+			System.out.println("distance between selected robots: " + r1.checkDist(r2));
+		}
 		else if (selection == 6) System.exit(0);
 	}
 	

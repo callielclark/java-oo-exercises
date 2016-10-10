@@ -61,7 +61,6 @@ public class StudentAndCourseTest extends TestCase {
 			s.submitGrade(1.0, 1);
 			assertEquals(s9, "Senior", s.getClassStanding());
 		}
-
 	}
 
 	@Test
@@ -153,7 +152,6 @@ public class StudentAndCourseTest extends TestCase {
 			assertEquals("createBaby should not alter the parents", a2 + " " + b2, ss.getName());
 			assertEquals("createBaby should not alter the parents", g2, ss.getGPA());
 			assertEquals("createBaby should not alter the parents", c2, ss.getCredits());
-
 		}
 	}
 
@@ -169,10 +167,6 @@ public class StudentAndCourseTest extends TestCase {
 			assertTrue("student toString does not contain student ID", s.toString().contains("" + c));
 		}
 	}
-
-
-
-
 
 	// TESTING COURSE CLASS HERE . . . FEEL FREE TO WRITE YOUR OWN, BUT DON'T CHANGE THIS ONE
 	// once again, we are watching you
@@ -254,7 +248,4 @@ public class StudentAndCourseTest extends TestCase {
 			assertTrue("course toString does not contain credits", cc.toString().contains("" + c));
 		}
 	}
-
-
-
 }

@@ -5,6 +5,11 @@ public class Robot
 	private int y;
 	private String orientation;
 	
+	public String getName() { return name; }
+	public int getX() { return x; }
+	public int getY() { return y; }
+	public String getOrientation() { return orientation; }
+	
 	public Robot(String name, int x, int y, String orientation) 
 	{
 		this.name = name;
@@ -15,9 +20,9 @@ public class Robot
 	
 	public String toString() 
 	{
-		return "Name: " + this.name +
-			"\nPosition: (" + this.x + ", " + this.y + ")" +
-			"\nOrientation: " + this.orientation;
+		return "name: " + this.name +
+			"\npos: (" + this.x + ", " + this.y + ")" +
+			"\nori: " + this.orientation;
 	}
 	
 	public void move(int speed) 
