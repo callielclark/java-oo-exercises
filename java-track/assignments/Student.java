@@ -33,7 +33,7 @@ public class Student
 	{
 		this.credits += c;
 		this.gpatotal += g * c;
-		this.GPA = Math.round( (this.gpatotal / this.credits) * 100d ) / 100d;
+		this.GPA = Math.round( (this.gpatotal / this.credits) * 1000d) / 1000d;
 	}
 	
 	public double computeTuition() 
@@ -47,24 +47,25 @@ public class Student
 		}
 		if (i > 0) 
 		{
-			tuition += i * (20000/15);
+			tuition += i * 1333.33;
 		}
 		return tuition;
 	}
 	
-	public String createLegacy(Student x, Student y) 
+	public Student createLegacy(Student x, Student y) 
 	{
 		String a = x.getName();
 		String b = y.getName();
 		int c = x.studentID + y.studentID;
 		Student z = new Student(a, b, c);
 		z.GPA = (x.GPA + y.GPA) / 2;
-		z.credits = x.credits + y.credits;
-		return z.studentToString();
+		if (x.credits >= y.credits) z.credits = x.credits;
+		else z.credits = y.credits;
+		return z;
 	}
 	
-	public String studentToString() 
+	public String toString() 
 	{
-		return this.firstName + " " + this.lastName + " " + this.studentID;
+		return this.getName() + " " + this.studentID;
 	}
 }
