@@ -52,7 +52,7 @@ public class Student
 		return tuition;
 	}
 	
-	public Student createLegacy(Student x, Student y) 
+	public static Student createLegacy(Student x, Student y) 
 	{
 		String a = x.getName();
 		String b = y.getName();

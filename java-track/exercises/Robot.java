@@ -10,43 +10,47 @@ public class Robot
 	public int getY() { return y; }
 	public String getOrientation() { return orientation; }
 	
-	public Robot(String name, int x, int y, String orientation) 
+	public Robot(String name, int x, int y, int orientation) 
 	{
 		this.name = name;
 		this.x = x;
 		this.y = y;
-		this.orientation = orientation;
+		
+		if (orientation == 1) this.orientation = "north";
+		else if (orientation == 2) this.orientation = "south";
+		else if (orientation == 3) this.orientation = "east";
+		else if (orientation == 4) this.orientation = "west";
 	}
 	
 	public String toString() 
 	{
-		return "name: " + this.name +
-			"\npos: (" + this.x + ", " + this.y + ")" +
-			"\nori: " + this.orientation;
+		return "name: " + name +
+			"\npos: (" + x + ", " + y + ")" +
+			"\nori: " + orientation;
 	}
 	
 	public void move(int speed) 
 	{
-		if (orientation == "N") y += speed;
-		else if (orientation == "S") y -= speed;
-		else if (orientation == "E") x += speed;
+		if (orientation == "north") y += speed;
+		else if (orientation == "south") y -= speed;
+		else if (orientation == "east") x += speed;
 		else x -= speed;
 	}
 	
 	public void turnLeft() 
 	{
-		if (this.orientation == "N") this.orientation = "W";
-		else if (this.orientation == "S") this.orientation = "E";
-		else if (this.orientation == "E") this.orientation = "N";
-		else this.orientation = "S";
+		if (this.orientation == "north") this.orientation = "west";
+		else if (this.orientation == "south") this.orientation = "east";
+		else if (this.orientation == "east") this.orientation = "north";
+		else this.orientation = "south";
 	}
 	
 	public void turnRight() 
 	{
-		if (this.orientation == "N") this.orientation = "E";
-		else if (this.orientation == "S") this.orientation = "W";
-		else if (this.orientation == "E") this.orientation = "S";
-		else this.orientation = "N";
+		if (this.orientation == "north") this.orientation = "east";
+		else if (this.orientation == "south") this.orientation = "west";
+		else if (this.orientation == "east") this.orientation = "south";
+		else this.orientation = "north";
 	}
 	
 	public double checkDist(Robot r) 
@@ -55,17 +59,16 @@ public class Robot
 	}
 	
 	public static void main(String[] args) 
-	{
-		/*
-		Robot r1 = new Robot("Robo", 1, 1, "N");
-		Robot r2 = new Robot("Robo2", 0, 0, "S");
+	{	
+		/*Robot r1 = new Robot("Robo", 1, 1, 1);
+		Robot r2 = new Robot("Robo2", 0, 0, 2);
 		r1.turnRight();
 		System.out.println(r1 + "\n\n" + r2);
 		System.out.println("\nDistance between robots: " + r1.checkDist(r2) + "\n");
 		r1.move(5);
 		r2.move(3);
+		System.out.println(r2);
 		System.out.println(r1 + "\n\n" + r2);
-		System.out.println("\nDistance between robots: " + r1.checkDist(r2));
-		*/
+		System.out.println("\nDistance between robots: " + r1.checkDist(r2));*/
 	}
 }

@@ -59,10 +59,10 @@ public class RobotMenu
 		{
 			displayRobots();
 			Robot r1 = selectRobot();
-			System.out.println("turn robot left/right, enter L or R: ");
-			String orientation = scan.next();
-			if (orientation == "L") r1.turnLeft();
-			else if (orientation == "R") r1.turnRight();
+			System.out.println("turn robot left/right, enter 1=left or 2=right: ");
+			int orientation = scan.nextInt();
+			if (orientation == 1) r1.turnLeft();
+			else if (orientation == 2) r1.turnRight();
 			System.out.println("robot's status after turning:\n" + r1);
 		}
 		else if (selection == 5) 
@@ -103,8 +103,8 @@ public class RobotMenu
 		int x = scan.nextInt();
 		System.out.println("enter y-coordinate: ");
 		int y = scan.nextInt();
-		System.out.println("enter orientation (N, S, E, or W): ");
-		String orientation = scan.next();
+		System.out.println("enter # for orientation (1=north, 2=south, 3=east, or 4=west): ");
+		int orientation = scan.nextInt();
 		robots.add(new Robot(name, x, y, orientation));
 	}
 }

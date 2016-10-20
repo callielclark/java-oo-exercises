@@ -6,17 +6,20 @@ public class Course
 	private int credits;
 	private int remainingSeats;
 	private ArrayList<Student> students = new ArrayList<>();
+	private static ArrayList<Course> courses = new ArrayList<>();
 	
 	public String getName() { return name; }
 	public int getCredits() { return credits; }
 	public int getRemainingSeats() { return remainingSeats; }
 	public ArrayList<Student> getStudents() { return students; }
+	public static ArrayList<Course> getAllCourses() { return courses; }
 	
 	public Course(String name, int credits, int remainingSeats) 
 	{
 		this.name = name;
 		this.credits = credits;
 		this.remainingSeats = remainingSeats;
+		courses.add(this);
 	}
 	
 	public boolean addStudent(Student x) 
@@ -53,5 +56,13 @@ public class Course
 	public String toString() 
 	{
 		return name + " " + credits;
+	}
+	
+	public static void main(String[] args) 
+	{
+		Course c1 = new Course("math", 3, 4);
+		Course c2 = new Course("science", 3, 4);
+		Course c3 = new Course("hisotry", 3, 4);
+		System.out.println(getAllCourses());
 	}
 }
